@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker push jgkawell/ros:base
+docker push jgkawell/ros:base-nvidia

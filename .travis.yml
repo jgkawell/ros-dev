@@ -1,0 +1,21 @@
+language: python
+
+env:
+  global:
+    - MAKEFLAGS="-j 2"
+
+services:
+  - docker
+
+script:
+  - docker build -f ./docker/Dockerfile --target base -t jgkawell/ros:base ./docker
+  - docker build -f ./docker/Dockerfile --target nvidia -t jgkawell/ros:base-nvidia ./docker
+
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
