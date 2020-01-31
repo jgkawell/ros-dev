@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jgkawell/ros-dev.svg?branch=master)](https://travis-ci.com/jgkawell/ros-dev)
+
 # ros-dev
 
 A helper repository for setting up a development environment for ROS.
